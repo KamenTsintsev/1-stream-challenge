@@ -1,0 +1,84 @@
+.search-bar-container {
+    position: relative;
+    align-self: center;
+    width: 40%;
+
+    .input {
+        position: relative;
+        width: 100%;
+        border: 2px solid rgb(193, 193, 193);
+        outline: none;
+        border-radius: 6px;
+        color: rgb(193, 193, 193);
+
+        margin: 15px 0;
+        padding: 5px 10px;
+
+        transition: all 0.5s;
+
+        &:hover,
+        &:focus {
+            border: 2px solid rgb(131, 131, 131);
+        }
+        &:focus {
+            border-radius: 6px 6px 0 0;
+        }
+    }
+
+    .search-list {
+        position: absolute;
+        height: 0;
+        max-height: 500px;
+        z-index: 100;
+        width: 100%;
+
+        visibility: hidden;
+
+        overflow-y: scroll;
+        background-color: white;
+
+        list-style-type: none;
+        padding: 0px;
+        margin: 0;
+        margin-top: -17px;
+
+        border: 2px solid rgb(193, 193, 193);
+        border-top: none;
+        border-radius: 0 0 6px 6px;
+
+        transition: all 0.5s;
+
+        color: transparent;
+
+        &.visible {
+            height: 500px;
+            visibility: visible;
+            border: 2px solid rgb(131, 131, 131);
+            border-top: none;
+        }
+
+        &:hover {
+            color: rgb(73, 73, 73);
+        }
+
+        &::-webkit-scrollbar {
+            width: 14px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border: 4px solid transparent;
+            background-clip: content-box;
+            border-radius: 999px;
+            box-shadow: inset 0 0 0 10px;
+        }
+
+        li {
+            color: rgb(151, 151, 151);
+            transition: all 0.5s;
+
+            &:hover {
+                color: rgb(53, 53, 53);
+            }
+        }
+    }
+}

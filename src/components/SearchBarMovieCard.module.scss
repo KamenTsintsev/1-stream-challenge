@@ -1,0 +1,26 @@
+.movie-card {
+    display: flex;
+
+    padding-left: 2px;
+
+    .image-container img {
+        border-radius: 6px;
+    }
+
+    .content-container {
+        width: 100%;
+        padding-left: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        p {
+            margin: 0;
+        }
+
+        .add-movie-button {
+            width: 40%;
+            align-self: center;
+        }
+    }
+}

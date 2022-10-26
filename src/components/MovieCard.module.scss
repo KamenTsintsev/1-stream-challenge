@@ -1,0 +1,134 @@
+.card-container {
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    grid-template-areas: "image content";
+    width: 100%;
+
+    .image-container {
+        grid-area: image;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+
+        .image {
+            width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+
+            -webkit-box-shadow: 0px 0px 10px 3px rgba(99, 99, 99, 0.75);
+            -moz-box-shadow: 0px 0px 10px 3px rgba(99, 99, 99, 0.75);
+            box-shadow: 0px 0px 10px 3px rgba(99, 99, 99, 0.75);
+        }
+
+        .placeholder {
+            font-size: 100px;
+            color: rgba(153, 153, 153, 0.5);
+            margin-left: 10px;
+        }
+    }
+
+    .content-container {
+        display: grid;
+        grid-template-columns: 20px 1fr 8fr 50px;
+        grid-template-rows: 50px 30px minmax(100px, auto);
+        padding: 20px;
+
+        grid-template-areas:
+            "index title title trash"
+            "rating rating votes ."
+            "description description description description";
+
+        .card-content-cell {
+            width: 100%;
+            height: 100%;
+        }
+
+        .movie-index {
+            grid-area: index;
+
+            margin: auto;
+
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            text-align: end;
+        }
+
+        .movie-title {
+            grid-area: title;
+
+            margin: auto;
+            height: auto;
+        }
+
+        .movie-delete {
+            grid-area: trash;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            button {
+                border: none;
+                background-color: transparent;
+                color: #e32929;
+
+                cursor: pointer;
+
+                width: 50%;
+                height: 50%;
+
+                padding: 0;
+                font-size: large;
+            }
+        }
+
+        .movie-rating {
+            grid-area: rating;
+
+            p {
+                height: auto;
+                margin: 5px auto;
+            }
+
+            svg {
+                font-size: 120%;
+                color: gold;
+            }
+
+            span {
+                font-size: 12px;
+                font-weight: bolder;
+                vertical-align: baseline;
+            }
+        }
+
+        .movie-votes {
+            grid-area: votes;
+            justify-content: flex-end;
+
+            p {
+                height: auto;
+                margin: 5px auto;
+            }
+        }
+
+        .movie-overview {
+            grid-area: description;
+            .movie-overview-text {
+                font-size: medium;
+
+                display: -webkit-box;
+                -webkit-line-clamp: 5;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                word-wrap: break-word;
+                word-break: break-word;
+
+                margin: 0;
+            }
+
+            max-height: 120px;
+        }
+    }
+}
